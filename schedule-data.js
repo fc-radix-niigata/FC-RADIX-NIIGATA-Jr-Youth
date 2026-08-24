@@ -1,4 +1,4 @@
-// 自動更新: 2026-08-24 15:23
+// 自動更新: 2026-08-24 09:36
 const SCHEDULE_DATA = {
   "20260803": [{"cls": "u13", "label": "U13", "time": "16:00〜18:00"}, {"cls": "u14 off", "label": "U14", "time": "OFF"}, {"cls": "u15 off", "label": "U15", "time": "OFF"}],
   "20260804": [{"cls": "u14 off", "label": "U14", "time": "OFF"}],
