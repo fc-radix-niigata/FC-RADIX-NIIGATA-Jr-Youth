@@ -67,6 +67,18 @@ for delta in range(3):
     print(f"  取得中: {y}/{m:02d}")
     all_events.update(extract(fetch(y, m)))
 
+# 既存データと同一なら書き込まない（不要なデプロイを防ぐ）
+import os
+json_path = os.path.join(os.path.dirname(output_path), "schedule.json")
+if os.path.exists(json_path):
+    try:
+        with open(json_path, encoding="utf-8") as f:
+            if json.load(f) == all_events:
+                print(f"  変更なし: {len(all_events)}日分（ファイルは更新しません）")
+                sys.exit(0)
+    except Exception:
+        pass
+
 now_str = datetime.now().strftime("%Y-%m-%d %H:%M")
 lines = [f"// 自動更新: {now_str}"]
 lines.append("const SCHEDULE_DATA = {")
@@ -79,8 +91,6 @@ with open(output_path, "w", encoding="utf-8") as f:
     f.write("\n".join(lines) + "\n")
 
 # JSON版も出力（ブラウザからキャッシュ回避付きで取得する用）
-import os
-json_path = os.path.join(os.path.dirname(output_path), "schedule.json")
 with open(json_path, "w", encoding="utf-8") as f:
     json.dump(all_events, f, ensure_ascii=False)
 
