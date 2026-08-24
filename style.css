@@ -1229,3 +1229,107 @@ address { font-style: normal; }
   border-color: var(--navy);
   color: var(--white);
 }
+
+/* ===== 関連サイト バナー ===== */
+.related-sites {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  max-width: 460px;
+}
+.related-card {
+  --accent: var(--red);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "label arrow"
+    "title arrow"
+    "desc  arrow";
+  align-items: center;
+  gap: 2px 12px;
+  padding: 16px 18px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.related-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+@media (hover: hover) {
+  .related-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(13,27,42,.13);
+    border-color: var(--accent);
+  }
+  .related-card:hover::after { opacity: .04; }
+  .related-card:hover .related-arrow { transform: translateX(3px); }
+}
+
+.related-label {
+  grid-area: label;
+  font-family: var(--font-en);
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  color: var(--accent);
+}
+.related-title {
+  grid-area: title;
+  font-size: .96rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.45;
+}
+.related-desc {
+  grid-area: desc;
+  font-size: .76rem;
+  color: var(--gray-700);
+  margin-top: 3px;
+}
+.related-arrow {
+  grid-area: arrow;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent);
+  transition: transform var(--transition);
+}
+
+/* カテゴリー別のアクセントカラー */
+.related-trial  { --accent: var(--red); }
+.related-school { --accent: #1a6fb5; }
+
+/* ダークセクションで使う場合 */
+.section-dark .related-card {
+  background: rgba(255,255,255,.05);
+  border-color: rgba(255,255,255,.14);
+}
+.section-dark .related-title { color: var(--white); }
+.section-dark .related-desc  { color: var(--gray-400); }
+
+@media (max-width: 480px) {
+  .related-card { padding: 14px 15px; }
+  .related-title { font-size: .9rem; }
+}
+
+/* 関連サイトカード：アクセス欄のリンク既定スタイル（下線・赤文字）を打ち消す */
+#access .access-block a.related-card,
+#access:not(.section-dark) .access-block a.related-card {
+  text-decoration: none;
+  color: inherit;
+}
+#access .related-card .related-label { color: var(--accent); }
+#access .related-card .related-title { color: var(--navy); }
+#access .related-card .related-desc  { color: var(--gray-700); }
+#access .related-card .related-arrow { color: var(--accent); }
+#access .related-card span { text-decoration: none; }
