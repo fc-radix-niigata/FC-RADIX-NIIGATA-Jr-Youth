@@ -1267,3 +1267,13 @@ address { font-style: normal; }
     box-shadow: 0 8px 20px rgba(13,27,42,.20);
   }
 }
+
+/* ===== セクション説明文：文節単位で折り返して「孤立文字」を防ぐ ===== */
+.section-desc { max-width: 720px; }
+.section-desc span {
+  display: inline-block;   /* この単位より内側では改行させない */
+}
+/* 2文目は必ず行頭から始める（PC） */
+@media (min-width: 769px) {
+  .section-desc .desc-break { display: block; margin-top: 2px; }
+}
