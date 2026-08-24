@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://fc-radix-niigata.netlify.app/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://image.sgrum.com/s1836hjdxz/view/hp/0001/0001/0006/20260317125539_780.jpg</image:loc>
+      <image:title>FC RADIX NIIGATA ジュニアユース</image:title>
+    </image:image>
+  </url>
+</urlset>
