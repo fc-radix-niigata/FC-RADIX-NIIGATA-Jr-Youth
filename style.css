@@ -1230,81 +1230,6 @@ address { font-style: normal; }
   color: var(--white);
 }
 
-/* ===== 関連サイト バナー ===== */
-.related-sites {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  max-width: 460px;
-}
-.related-card {
-  --accent: var(--red);
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-areas:
-    "label arrow"
-    "title arrow"
-    "desc  arrow";
-  align-items: center;
-  gap: 2px 12px;
-  padding: 16px 18px;
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-left: 4px solid var(--accent);
-  border-radius: var(--radius);
-  text-decoration: none;
-  overflow: hidden;
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-}
-.related-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--accent);
-  opacity: 0;
-  transition: opacity var(--transition);
-  pointer-events: none;
-}
-@media (hover: hover) {
-  .related-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 26px rgba(13,27,42,.13);
-    border-color: var(--accent);
-  }
-  .related-card:hover::after { opacity: .04; }
-  .related-card:hover .related-arrow { transform: translateX(3px); }
-}
-
-.related-label {
-  grid-area: label;
-  font-family: var(--font-en);
-  font-size: .66rem;
-  font-weight: 700;
-  letter-spacing: .22em;
-  color: var(--accent);
-}
-.related-title {
-  grid-area: title;
-  font-size: .96rem;
-  font-weight: 700;
-  color: var(--navy);
-  line-height: 1.45;
-}
-.related-desc {
-  grid-area: desc;
-  font-size: .76rem;
-  color: var(--gray-700);
-  margin-top: 3px;
-}
-.related-arrow {
-  grid-area: arrow;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--accent);
-  transition: transform var(--transition);
-}
-
 /* カテゴリー別のアクセントカラー */
 .related-trial  { --accent: var(--red); }
 .related-school { --accent: #1a6fb5; }
@@ -1322,14 +1247,23 @@ address { font-style: normal; }
   .related-title { font-size: .9rem; }
 }
 
-/* 関連サイトカード：アクセス欄のリンク既定スタイル（下線・赤文字）を打ち消す */
-#access .access-block a.related-card,
-#access:not(.section-dark) .access-block a.related-card {
+
+/* ===== 関連サイト ボタン（色で区別） ===== */
+#access .access-btns .btn-site {
   text-decoration: none;
-  color: inherit;
+  color: var(--white);
+  border: 1px solid transparent;
+  font-weight: 700;
+  box-shadow: 0 3px 10px rgba(13,27,42,.10);
+  transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
 }
-#access .related-card .related-label { color: var(--accent); }
-#access .related-card .related-title { color: var(--navy); }
-#access .related-card .related-desc  { color: var(--gray-700); }
-#access .related-card .related-arrow { color: var(--accent); }
-#access .related-card span { text-decoration: none; }
+#access .btn-site-trial  { background: var(--red);  }
+#access .btn-site-school { background: #1a6fb5; }
+
+@media (hover: hover) {
+  #access .access-btns .btn-site:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+    box-shadow: 0 8px 20px rgba(13,27,42,.20);
+  }
+}
