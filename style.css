@@ -1277,3 +1277,51 @@ address { font-style: normal; }
 @media (min-width: 769px) {
   .section-desc .desc-break { display: block; margin-top: 2px; }
 }
+
+/* ===== カレンダー：アプリ限定の予定に関する案内 ===== */
+.cal-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  max-width: 860px;
+  margin: 0 auto 26px;
+  padding: 14px 20px;
+  background: rgba(212,175,55,.10);
+  border: 1px solid rgba(212,175,55,.45);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius);
+}
+.cal-notice-badge {
+  flex-shrink: 0;
+  margin-top: 1px;
+  padding: 4px 12px;
+  background: var(--gold);
+  color: #4a3708;
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+.cal-notice p {
+  font-size: .84rem;
+  line-height: 1.8;
+  color: var(--gray-700);
+  margin: 0;
+}
+.cal-notice strong { color: var(--text); }
+
+/* ダークセクションで使う場合 */
+.section-dark .cal-notice p { color: #dfe6ef; }
+.section-dark .cal-notice strong { color: var(--white); }
+
+@media (max-width: 768px) {
+  .cal-notice {
+    flex-direction: column;
+    gap: 8px;
+    padding: 13px 16px;
+    margin-bottom: 20px;
+  }
+  .cal-notice p { font-size: .78rem; }
+  .pc-br { display: none; }
+}
