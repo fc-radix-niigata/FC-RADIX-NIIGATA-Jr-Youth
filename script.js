@@ -211,3 +211,27 @@ if (document.getElementById('calBody')) {
   });
   setInterval(loadSchedule, 10 * 60 * 1000);
 }
+
+// ===== 練習体験会：終了日程／キャンセル待ちの自動表示 =====
+(function () {
+  const cards = document.querySelectorAll('.trial-card[data-date]');
+  if (!cards.length) return;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  cards.forEach(card => {
+    const d = new Date(card.dataset.date + 'T00:00:00');
+    const cap = card.querySelector('.trial-cap');
+
+    if (d < today) {
+      // 開催済み
+      card.classList.add('is-past');
+      if (cap) cap.textContent = '終了しました';
+    } else if (card.dataset.status === 'waitlist') {
+      // 満席・キャンセル待ち
+      card.classList.add('is-waitlist');
+      if (cap) cap.textContent = 'キャンセル待ち';
+    }
+  });
+})();

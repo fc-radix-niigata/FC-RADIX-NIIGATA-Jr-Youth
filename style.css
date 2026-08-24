@@ -1108,3 +1108,124 @@ address { font-style: normal; }
   background: var(--navy-mid);
   border: 1px solid rgba(255,255,255,.10);
 }
+
+/* ===== ヘッダーロゴ（エンブレム付き） ===== */
+.logo a { flex-direction: row !important; align-items: center; gap: 10px !important; }
+.logo-emblem { height: 34px; width: auto; flex-shrink: 0; }
+@media (max-width: 768px) { .logo-emblem { height: 28px; } }
+
+/* ===== 練習体験会：終了／キャンセル待ち ===== */
+.trial-card.is-past {
+  opacity: .55;
+  border-top-color: var(--gray-400);
+  background: var(--gray-100);
+  position: relative;
+}
+.trial-card.is-past .trial-date,
+.trial-card.is-past .trial-dow {
+  color: var(--gray-400);
+  border-color: var(--gray-400);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+.trial-card.is-past .trial-cap { color: var(--gray-400); font-weight: 700; }
+
+.trial-card.is-waitlist { border-top-color: var(--gold); }
+.trial-card.is-waitlist .trial-dow { color: var(--gold); border-color: var(--gold); }
+.trial-card.is-waitlist .trial-cap {
+  color: #8a6508;
+  font-weight: 700;
+  background: rgba(212,175,55,.15);
+  border-radius: 4px;
+  padding: 4px 0 3px;
+}
+
+/* ===== 練習体験会：注意書きリスト ===== */
+.trial-notes {
+  list-style: none;
+  max-width: 620px;
+  margin: 0 auto 28px;
+  background: var(--white);
+  border: 1px solid var(--line, var(--gray-200));
+  border-radius: var(--radius);
+  padding: 8px 22px;
+}
+.section-dark .trial-notes {
+  background: var(--navy-mid);
+  border-color: rgba(255,255,255,.12);
+}
+.trial-notes li {
+  display: flex;
+  gap: 14px;
+  font-size: .88rem;
+  padding: 11px 2px;
+  line-height: 1.65;
+}
+.trial-notes li + li { border-top: 1px solid var(--gray-200); }
+.section-dark .trial-notes li + li { border-top-color: rgba(255,255,255,.10); }
+.trial-notes strong {
+  flex: 0 0 84px;
+  color: var(--red);
+  font-size: .82rem;
+  letter-spacing: .02em;
+}
+.section-dark .trial-notes { color: #dfe6ef; }
+@media (max-width: 600px) {
+  .trial-notes li { flex-direction: column; gap: 3px; }
+  .trial-notes strong { flex: none; }
+}
+
+/* アクセス欄の補足 */
+.access-note { font-size: .8rem; color: var(--gray-400); }
+
+/* ===== カレンダー：全カテゴリー（U13/U14/U15）を確実に表示 ===== */
+/* スケジュールだけコンテナを広げて1マスの横幅を稼ぐ */
+#schedule > .container { max-width: 1320px; }
+
+/* 3件入っても潰れないように高さを確保 */
+.cal-table tbody td {
+  height: 108px;
+  padding: 6px 5px;
+}
+.cal-event {
+  font-size: .66rem;
+  padding: 2px 4px;
+  margin-top: 2px;
+}
+.cal-day-num { font-size: .78rem; }
+
+/* 中間幅：時間を短く見せて3件を優先表示 */
+@media (max-width: 1100px) {
+  .cal-table tbody td { height: 96px; padding: 5px 3px; }
+  .cal-event { font-size: .6rem; padding: 2px 3px; }
+}
+
+/* スマホ：時間は非表示、カテゴリー名を3件とも表示 */
+@media (max-width: 768px) {
+  #schedule > .container { padding: 0 10px; }
+  .cal-table tbody td { height: 88px; padding: 4px 2px; }
+  .cal-event {
+    font-size: .58rem;
+    padding: 2px 1px;
+    margin-top: 2px;
+    letter-spacing: -.02em;
+  }
+  .cal-day-num { font-size: .7rem; }
+}
+
+/* ===== アクセスを「明るいセクション」で表示する場合の色調整 ===== */
+#access:not(.section-dark) .access-block address,
+#access:not(.section-dark) .access-block p { color: var(--gray-700); }
+#access:not(.section-dark) .access-block address strong { color: var(--text); }
+#access:not(.section-dark) .access-block a:not(.btn) { color: var(--red); }
+#access:not(.section-dark) .btn-primary { color: var(--white); text-decoration: none; }
+#access:not(.section-dark) .access-note { color: var(--muted, var(--gray-400)); }
+#access:not(.section-dark) .btn-outline {
+  color: var(--navy);
+  border-color: rgba(13,27,42,.35);
+}
+#access:not(.section-dark) .btn-outline:hover {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
