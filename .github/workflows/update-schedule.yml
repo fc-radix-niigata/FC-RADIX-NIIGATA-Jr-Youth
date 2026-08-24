@@ -1,0 +1,44 @@
+name: スケジュール自動更新
+
+on:
+  schedule:
+    # 毎時0分に自動実行（UTC基準。カレンダー変更が多いため高頻度）
+    - cron: '0 * * * *'
+  workflow_dispatch:
+    # 手動実行ボタン（すぐ反映したいときはこれを押す）
+
+# 同時実行を防ぐ
+concurrency:
+  group: update-schedule
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Python セットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: スケジュールデータを取得・更新
+        run: |
+          chmod +x update-schedule.sh
+          bash update-schedule.sh
+
+      - name: 変更があればコミット＆プッシュ
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add schedule-data.js schedule.json
+          if git diff --cached --quiet; then
+            echo "変更なし、スキップします"
+          else
+            git commit -m "🔄 スケジュール自動更新 $(date '+%Y-%m-%d %H:%M')"
+            git push
+          fi
