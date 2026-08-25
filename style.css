@@ -1421,26 +1421,6 @@ address { font-style: normal; }
   line-height: 1.85;
   color: var(--gray-400);
 }
-.concept-sub {
-  list-style: none;
-  margin-top: 12px;
-  border-top: 1px solid rgba(255,255,255,.12);
-  padding-top: 10px;
-}
-.concept-sub li {
-  display: flex;
-  gap: 10px;
-  align-items: baseline;
-  font-size: .8rem;
-  color: var(--gray-400);
-  padding: 3px 0;
-}
-.concept-sub span {
-  flex: 0 0 34px;
-  color: var(--gold);
-  font-weight: 700;
-  font-size: .74rem;
-}
 
 /* 明るいセクションで使う場合 */
 .section:not(.section-dark) .concept-item {
@@ -1450,8 +1430,7 @@ address { font-style: normal; }
 }
 .section:not(.section-dark) .concept-item h4 { color: var(--navy); }
 .section:not(.section-dark) .concept-item p,
-.section:not(.section-dark) .concept-sub li { color: var(--gray-700); }
-.section:not(.section-dark) .concept-no { background: var(--white); }
+.section:not(.section-dark) .section:not(.section-dark) .concept-no { background: var(--white); }
 
 @media (max-width: 600px) {
   .concept-item { padding: 28px 18px 22px; }
