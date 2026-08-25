@@ -1,4 +1,4 @@
-// ===== HERO SLIDER =====
+// ===== HERO SLIDER（画像が複数ある場合のみ動作） =====
 const slides = document.querySelectorAll('.hero-slide');
 const dots   = document.querySelectorAll('.hero-dot');
 let current = 0;
@@ -6,23 +6,22 @@ let sliderTimer;
 
 function goToSlide(index) {
   slides[current].classList.remove('active');
-  dots[current].classList.remove('active');
+  dots[current]?.classList.remove('active');
   current = index;
   slides[current].classList.add('active');
-  dots[current].classList.add('active');
+  dots[current]?.classList.add('active');
 }
 function nextSlide() { goToSlide((current + 1) % slides.length); }
-function startSlider() { sliderTimer = setInterval(nextSlide, 5000); }
 
-if (slides.length) {
+if (slides.length > 1) {
+  sliderTimer = setInterval(nextSlide, 5000);
   dots.forEach(dot => {
     dot.addEventListener('click', () => {
       clearInterval(sliderTimer);
       goToSlide(Number(dot.dataset.index));
-      startSlider();
+      sliderTimer = setInterval(nextSlide, 5000);
     });
   });
-  startSlider();
 }
 
 // ===== HAMBURGER MENU =====
