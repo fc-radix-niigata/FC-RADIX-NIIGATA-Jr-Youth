@@ -79,7 +79,7 @@ const observer = new IntersectionObserver((entries, obs) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.news-card, .class-card, .staff-card, .match-item, .trial-card').forEach(el => {
+document.querySelectorAll('.news-card, .class-card, .staff-card, .match-item, .trial-card, .concept-item').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(20px)';
   el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
