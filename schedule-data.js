@@ -1,4 +1,4 @@
-// 自動更新: 2026-08-30 06:04
+// 自動更新: 2026-08-31 02:15
 const SCHEDULE_DATA = {
   "20260803": [{"cls": "u13", "label": "U13", "time": "16:00〜18:00"}, {"cls": "u14 off", "label": "U14", "time": "OFF"}, {"cls": "u15 off", "label": "U15", "time": "OFF"}],
   "20260804": [{"cls": "u14 off", "label": "U14", "time": "OFF"}],
@@ -38,11 +38,12 @@ const SCHEDULE_DATA = {
   "20260916": [{"cls": "u14", "label": "U14", "time": "19:00〜21:00"}],
   "20260917": [{"cls": "u13", "label": "U13", "time": "19:00〜21:00"}, {"cls": "u14 off", "label": "U14", "time": "OFF"}],
   "20260918": [{"cls": "u14", "label": "U14", "time": "19:00〜21:00"}],
-  "20260919": [{"cls": "u14 off", "label": "U14", "time": "OFF"}],
+  "20260919": [{"cls": "u13 off", "label": "U13", "time": "OFF"}, {"cls": "u14 off", "label": "U14", "time": "OFF"}],
   "20260922": [{"cls": "u13", "label": "U13", "time": "07:30〜09:00"}, {"cls": "u14 off", "label": "U14", "time": "OFF"}],
   "20260923": [{"cls": "u14 off", "label": "U14", "time": "OFF"}],
   "20260924": [{"cls": "u14 off", "label": "U14", "time": "OFF"}],
   "20260925": [{"cls": "u14", "label": "U14", "time": "19:00〜21:00"}],
+  "20260926": [{"cls": "u14 off", "label": "U14", "time": "OFF"}],
   "20260928": [{"cls": "u13", "label": "U13", "time": "19:00〜21:00"}, {"cls": "u14", "label": "U14", "time": "19:00〜21:00"}],
   "20260929": [{"cls": "u13", "label": "U13", "time": "19:00〜21:00"}, {"cls": "u14 off", "label": "U14", "time": "OFF"}],
   "20260930": [{"cls": "u14", "label": "U14", "time": "19:00〜21:00"}],
