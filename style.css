@@ -1436,3 +1436,66 @@ address { font-style: normal; }
   .concept-item { padding: 28px 18px 22px; }
   .concept-no { width: 36px; height: 36px; font-size: .88rem; top: -12px; }
 }
+
+/* ===== セレクション見出し・区切り（2026追加） ===== */
+.trial-heading {
+  font-size: clamp(19px, 3vw, 25px);
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 10px;
+  letter-spacing: .02em;
+  text-align: center;
+}
+.trial-sep {
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,.18);
+  margin: 56px 0 40px;
+}
+
+.trial-heading + .section-desc { margin-top: 0; }
+
+/* ===== 受付時間の2パターン（2026セレクション） ===== */
+.reception { max-width: 860px; margin: 0 auto 34px; }
+.reception-title {
+  text-align: center; color: #fff; font-size: 1rem; font-weight: 800;
+  margin: 0 0 16px; letter-spacing: .02em;
+}
+.reception-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.reception-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.16);
+  border-top: 3px solid var(--red);
+  border-radius: var(--radius, 10px);
+  padding: 20px 22px;
+}
+.reception-card.is-b { border-top-color: var(--gold, #c9a227); }
+.reception-label {
+  font-size: .82rem; font-weight: 700; color: rgba(255,255,255,.72);
+  margin-bottom: 10px; line-height: 1.5;
+}
+.reception-time {
+  font-size: 1.6rem; font-weight: 800; color: #fff;
+  letter-spacing: .02em; margin-bottom: 10px;
+}
+.reception-time span { font-size: 1rem; opacity: .6; margin: 0 2px; }
+.reception-note {
+  font-size: .86rem; line-height: 1.75; color: rgba(255,255,255,.8); margin: 0;
+}
+.reception-note strong { color: #fff; }
+.reception-foot {
+  text-align: center; font-size: .84rem; color: rgba(255,255,255,.6); margin: 14px 0 0;
+}
+@media (max-width: 700px) {
+  .reception-grid { grid-template-columns: 1fr; }
+}
+.reception-opt {
+  margin: 12px 0 0;
+  padding: 10px 14px;
+  background: rgba(255,255,255,.07);
+  border-left: 3px solid var(--gold, #c9a227);
+  border-radius: 6px;
+  font-size: .84rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,.85);
+}
+.reception-opt strong { color: #fff; }
