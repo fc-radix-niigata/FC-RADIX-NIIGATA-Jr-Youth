@@ -1030,3 +1030,25 @@ address { font-style: normal; }
 @media (min-width: 769px) and (max-width: 1180px) {
   .main-nav a { white-space: nowrap; padding-left: 8px; padding-right: 8px; font-size: .78rem; }
 }
+
+/* ===== アクセスを「明るいセクション」で表示する場合の色調整（トップと共通） ===== */
+#access:not(.section-dark) .access-block address,
+#access:not(.section-dark) .access-block p { color: var(--gray-700); }
+#access:not(.section-dark) .access-block address strong { color: var(--text); }
+#access:not(.section-dark) .access-block a:not(.btn) { color: var(--red); }
+#access:not(.section-dark) .btn-primary { color: var(--white); text-decoration: none; }
+#access:not(.section-dark) .btn-outline {
+  color: var(--navy);
+  border-color: rgba(13,27,42,.35);
+}
+#access:not(.section-dark) .btn-outline:hover {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
+/* 新着が1件だけのときは中央に大きめに表示 */
+.news-grid:has(> .news-card:only-child) {
+  grid-template-columns: minmax(0, 560px);
+  justify-content: center;
+}
