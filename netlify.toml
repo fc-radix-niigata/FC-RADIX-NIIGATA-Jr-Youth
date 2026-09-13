@@ -5,3 +5,24 @@
   from = "/api/schedule"
   to = "/.netlify/functions/schedule"
   status = 200
+
+[[redirects]]
+  from = "/api/school-schedule"
+  to = "/.netlify/functions/school-schedule"
+  status = 200
+
+# 旧URL・表記ゆれの吸収
+[[redirects]]
+  from = "/school"
+  to = "/school/"
+  status = 301
+
+[[redirects]]
+  from = "/taikenkai"
+  to = "/taikenkai-2026/"
+  status = 301
+
+[[redirects]]
+  from = "/u13-taikenkai-2026/*"
+  to = "/taikenkai-2026/"
+  status = 301
