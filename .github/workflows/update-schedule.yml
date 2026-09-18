@@ -39,6 +39,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "変更なし、スキップします"
           else
-            git commit -m "🔄 スケジュール自動更新 $(date '+%Y-%m-%d %H:%M') [skip netlify]"
+            git commit -m "🔄 スケジュール自動更新 $(date '+%Y-%m-%d %H:%M')"
             git push
           fi
