@@ -1130,6 +1130,39 @@ address { font-style: normal; }
 }
 .trial-card.is-past .trial-cap { color: var(--gray-400); font-weight: 700; }
 
+/* ===== セレクション：受付中（開催が決まっている募集を強調） ===== */
+.trial-card.is-open {
+  border: 2px solid var(--red);
+  border-top: 2px solid var(--red);
+  box-shadow: 0 0 0 5px rgba(192,57,43,.16), 0 10px 26px rgba(192,57,43,.22);
+  position: relative;
+  transform: scale(1.03);
+}
+.trial-card.is-open::before {
+  content: "受付中";
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--red);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  padding: 4px 16px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(192,57,43,.4);
+  white-space: nowrap;
+}
+.trial-card.is-open .trial-date { color: var(--red); font-size: 2.3rem; }
+.trial-card.is-open .trial-cap { color: var(--red); font-weight: 800; }
+.trial-card.is-open:hover { transform: scale(1.03) translateY(-4px); }
+@media (max-width: 768px) {
+  .trial-card.is-open { transform: none; }
+  .trial-card.is-open:hover { transform: translateY(-4px); }
+  .trial-card.is-open .trial-date { font-size: 1.9rem; }
+}
+
 .trial-card.is-waitlist { border-top-color: var(--gold); }
 .trial-card.is-waitlist .trial-dow { color: var(--gold); border-color: var(--gold); }
 .trial-card.is-waitlist .trial-cap {
