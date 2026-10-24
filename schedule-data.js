@@ -1,4 +1,4 @@
-// 自動更新: 2026-10-23 12:16
+// 自動更新: 2026-10-24 07:43
 const SCHEDULE_DATA = {
   "20261001": [{"cls": "u13", "label": "U13", "time": "19:00〜21:00"}, {"cls": "u14 off", "label": "U14", "time": "OFF"}, {"cls": "u15 off", "label": "U15", "time": "OFF"}],
   "20261002": [{"cls": "u14", "label": "U14", "time": "19:00〜21:00"}, {"cls": "u15 off", "label": "U15", "time": "OFF"}],
@@ -24,11 +24,11 @@ const SCHEDULE_DATA = {
   "20261023": [{"cls": "u14", "label": "U14", "time": "19:00〜21:00"}, {"cls": "u15", "label": "U15", "time": "19:00〜21:00"}],
   "20261024": [{"cls": "u15 off", "label": "U15", "time": "OFF"}],
   "20261025": [{"cls": "u15 off", "label": "U15", "time": "OFF"}],
-  "20261026": [{"cls": "u13", "label": "U13", "time": "19:00〜21:00"}, {"cls": "u14", "label": "U14", "time": "19:00〜21:00"}],
-  "20261027": [{"cls": "u13", "label": "U13", "time": "19:00〜21:00"}, {"cls": "u14 off", "label": "U14", "time": "OFF"}],
-  "20261028": [{"cls": "u14", "label": "U14", "time": "19:00〜21:00"}],
-  "20261029": [{"cls": "u13", "label": "U13", "time": "19:00〜21:00"}, {"cls": "u14 off", "label": "U14", "time": "OFF"}],
-  "20261030": [{"cls": "u14", "label": "U14", "time": "19:00〜21:00"}],
+  "20261026": [{"cls": "u13", "label": "U13", "time": "19:00〜21:00"}, {"cls": "u14", "label": "U14", "time": "19:00〜21:00"}, {"cls": "u15 off", "label": "U15", "time": "OFF"}],
+  "20261027": [{"cls": "u13", "label": "U13", "time": "19:00〜21:00"}, {"cls": "u14 off", "label": "U14", "time": "OFF"}, {"cls": "u15 off", "label": "U15", "time": "OFF"}],
+  "20261028": [{"cls": "u14", "label": "U14", "time": "19:00〜21:00"}, {"cls": "u15 off", "label": "U15", "time": "OFF"}],
+  "20261029": [{"cls": "u13", "label": "U13", "time": "19:00〜21:00"}, {"cls": "u14 off", "label": "U14", "time": "OFF"}, {"cls": "u15 off", "label": "U15", "time": "OFF"}],
+  "20261030": [{"cls": "u14", "label": "U14", "time": "19:00〜21:00"}, {"cls": "u15 off", "label": "U15", "time": "OFF"}],
   "20261102": [{"cls": "u13", "label": "U13", "time": "19:00〜21:00"}, {"cls": "u14", "label": "U14", "time": "19:00〜21:00"}],
   "20261103": [{"cls": "u13 off", "label": "U13", "time": "OFF"}, {"cls": "u14 off", "label": "U14", "time": "OFF"}],
   "20261104": [{"cls": "u14", "label": "U14", "time": "19:00〜21:00"}],
