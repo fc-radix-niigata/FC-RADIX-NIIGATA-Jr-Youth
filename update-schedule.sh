@@ -28,8 +28,8 @@ def extract(data):
     out = {}
     if not data:
         return out
-    detail = data.get("detailData", {})
-    for dateKey, items in data.get("dayCalendarData", {}).items():
+    detail = data.get("detailData") or {}
+    for dateKey, items in (data.get("dayCalendarData") or {}).items():
         for item in items:
             t = item.get("title", "")
             # スクール（U10/U12）はジュニアユースサイトでは扱わない
@@ -124,11 +124,11 @@ for delta in range(3):
     data = fetch(y, m)
     if not data:
         continue
-    for dateKey, items in data.get("dayCalendarData", {}).items():
+    for dateKey, items in (data.get("dayCalendarData") or {}).items():
         for item in items:
             t = item.get("title", "")
             if ("U12" in t or "U10" in t) and "スクール" in t:
-                d = data.get("detailData", {}).get(str(item["seq"]), {})
+                d = (data.get("detailData") or {}).get(str(item["seq"]), {})
                 time_str = d["startTime"] + "〜" + d["endTime"] if d.get("startTime") and d.get("endTime") else ""
                 cls = "u12" if "U12" in t else "u10"
                 events.setdefault(dateKey, []).append({"cls": cls, "label": cls.upper(), "time": time_str})

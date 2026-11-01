@@ -998,7 +998,7 @@ address { font-style: normal; }
 
   /* タブ */
   .match-tabs { gap: 4px; }
-  .match-tab { padding: 8px 14px; font-size: .8rem; }
+  .match-tab { padding: 8px 8px; font-size: .78rem; white-space: nowrap; }
 
   /* フッター */
   .footer-inner { flex-direction: column; gap: 24px; }
